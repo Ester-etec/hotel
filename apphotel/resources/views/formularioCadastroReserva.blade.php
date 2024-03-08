@@ -6,18 +6,40 @@
 @csrf
 
   <div class="col-md-12">
-    <label for="inputNome" class="form-label">Nome:</label>
-    <input type="text" class="form-control" id="inputNome" name="nome" placeholder="Paulo da Silva">
+    <label for="inputCodClie" class="form-label">Código do cliente:</label>
+    <input type="text" class="form-control" id="inputCodClie" name="codlie" placeholder="1">
   </div>
   <div class="col-md-12">
-    <label for="inputEmail" class="form-label">E-mail:</label>
-    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Paulo@gmail.com">
+    <label for="inputNmClie" class="form-label">Nome do cliente:</label>
+    <input type="text" class="form-control" id="inputNmClie" name="nmclie" placeholder="Cecilia">
   </div>
   <div class="col-12">
-    <label for="inputFuncao" class="form-label">Funcao:</label>
-    <input type="tel" class="form-control" id="inputFuncao" name="funcao" placeholder="Recepcionista">
-  
+    <label for="inputNumQua" class="form-label">Número do quarto:</label>
+    <input type="text" class="form-control" id="inputNumQua" name="numqua" placeholder="001">
   </div>
+  <div class="col-12">
+    <label for="inputTipoQua" class="form-label">Tipo do quarto:</label>
+    <input type="text" class="form-control" id="inputTipoQua" name="tipoqua" placeholder="suite">
+  </div>
+  <div class="col-12">
+    <label for="inputValDia" class="form-label">Valor da Diaria:</label>
+    <input type="text" class="form-control" id="inputValDia" name="valdia" placeholder="001">
+  </div>
+  <div class="col-12">
+    <label for="inputDtEntrada" class="form-label">Data de entrada:</label>
+    <input type="date" class="form-control" id="inputDtEntrada" name="dtentrada" placeholder="001">
+  </div>
+  <div class="col-12">
+    <label for="inputDtSaida" class="form-label">Data de saida:</label>
+    <input type="date" class="form-control" id="inputDtSaida" name="dtsaida" placeholder="001">
+  </div>
+  <div class="form-floating">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected>Situação do quarto:</option>
+    <option value="1">Pendente</option>
+    <option value="2">Pago</option>
+  </select>
+</div>
 
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Cadastrar</button>

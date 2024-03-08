@@ -20,7 +20,7 @@ class QuartoController extends Controller
         $dadosValidos = $request->validate([
             'numero' => 'integer|required',
             'tipo' => 'string|required',
-            'valor' => 'decimal|required'
+            'valor' => 'double|required'
             //required = não pode deixar em branco
 
         ]);
