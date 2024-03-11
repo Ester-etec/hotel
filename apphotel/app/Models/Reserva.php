@@ -9,14 +9,14 @@ class Reserva extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'codclie',
-        'nmclie',
+        'idclie',
+        'idfun',
         'numquarto',
-        'tpquarto',
         'valdia',
         'dtentrada',
         'dtsaida',
-        'situaquarto'
+        'valtotal',
+        'situacao'
         //nomes do mesmo jeito que está na tabela
     ];
 }

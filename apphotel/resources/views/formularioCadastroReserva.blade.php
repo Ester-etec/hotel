@@ -2,46 +2,51 @@
 @section('content')
 
 <div class="container fixed mt-5">
-<form class="row g-3" method="Post" action="{{route('envia-banco-reserva')}}">
-@csrf
+<form class="row g-3" method="Post" action="{{route('envio-banco-reserva')}}">
+  @csrf
+  <<div class="col-md-3">
+    <label for="inputIdFuncionario" class="form-label">Código do Funcionário:</label>
+    <input type="number" class="form-control" id="inputIdFuncionario" name="idfuncionario">
+  </div>
 
-  <div class="col-md-12">
-    <label for="inputCodClie" class="form-label">Código do cliente:</label>
-    <input type="text" class="form-control" id="inputCodClie" name="codlie" placeholder="1">
+  <div class="col-md-3">
+    <label for="inputIdCliente" class="form-label">Código do Cliente:</label>
+    <input type="number" class="form-control" id="inputIdCliente"  name="idcliente" >
   </div>
-  <div class="col-md-12">
-    <label for="inputNmClie" class="form-label">Nome do cliente:</label>
-    <input type="text" class="form-control" id="inputNmClie" name="nmclie" placeholder="Cecilia">
+
+  <div class="col-md-2">
+    <label for="inputNumQuarto" class="form-label">Número do Quarto:</label>
+    <input type="number" class="form-control" id="inputNumQuarto" name="numquarto" >
   </div>
-  <div class="col-12">
-    <label for="inputNumQua" class="form-label">Número do quarto:</label>
-    <input type="text" class="form-control" id="inputNumQua" name="numqua" placeholder="001">
+
+  <div class="col-md-4">
+    <label for="inputValDiaria" class="form-label">Valor da Diária:</label>
+    <input type="number" class="form-control" id="inputValDiaria" readonly name="valdiaria" >
   </div>
-  <div class="col-12">
-    <label for="inputTipoQua" class="form-label">Tipo do quarto:</label>
-    <input type="text" class="form-control" id="inputTipoQua" name="tipoqua" placeholder="suite">
+  <div class="col-md-3">
+    <label for="inputDtEntrada" class="form-label">Data Entrada:</label>
+    <input type="date" class="form-control" id="inputDtEntrada" name="dtentrada" >
   </div>
-  <div class="col-12">
-    <label for="inputValDia" class="form-label">Valor da Diaria:</label>
-    <input type="text" class="form-control" id="inputValDia" name="valdia" placeholder="001">
+  <div class="col-md-3">
+    <label for="inputDtSaida" class="form-label">Data Saída:</label>
+    <input type="date" class="form-control" id="inputDtSaida" name="dtsaida" >
   </div>
-  <div class="col-12">
-    <label for="inputDtEntrada" class="form-label">Data de entrada:</label>
-    <input type="date" class="form-control" id="inputDtEntrada" name="dtentrada" placeholder="001">
-  </div>
-  <div class="col-12">
-    <label for="inputDtSaida" class="form-label">Data de saida:</label>
-    <input type="date" class="form-control" id="inputDtSaida" name="dtsaida" placeholder="001">
-  </div>
-  <div class="form-floating">
-  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-    <option selected>Situação do quarto:</option>
-    <option value="1">Pendente</option>
-    <option value="2">Pago</option>
-  </select>
+  <div class="col-md-3">
+  <label for="inputValorTotal" class="form-label">Valor Total:</label>
+  <div class="input-group mb-3">
+  <span class="input-group-text">R$</span>
+  <input type="text" class="form-control" name="valortotal" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
 </div>
-
-  <div class="col-12">
+  </div>
+  <div class="col-md-5">
+  <label for="inputSituacaoPag" class="form-label" >Situação do pagamento:</label>
+<select class="form-select" name="situacaopag" aria-label="Default select example">
+<option selected value="Pendente">Pendente</option>
+<option value="Pago">Pago</option>
+</select>
+  </div>
+    <div class="col-12">
     <button type="submit" class="btn btn-primary">Cadastrar</button>
   </div>
 </form>
