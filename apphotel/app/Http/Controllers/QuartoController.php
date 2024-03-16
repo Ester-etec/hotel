@@ -18,9 +18,9 @@ class QuartoController extends Controller
 
     public function cadQuarto(Request $request){
         $dadosValidos = $request->validate([
-            'numero' => 'integer|required',
-            'tipo' => 'string|required',
-            'valor' => 'double|required'
+            'numquarto' => 'integer|required',
+            'tipoquarto' => 'string|required',
+            'valquarto' => 'float|required'
             //required = não pode deixar em branco
 
         ]);

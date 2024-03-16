@@ -26,7 +26,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{'/cadastro-cliente'}}">Cadastrar</a></li>
             <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-            <li><a class="dropdown-item" href="#">Alterar</a></li>
+            <li><a class="dropdown-item" href="{{'/gerenciar-cliente'}}">Alterar</a></li>
             <li><a class="dropdown-item" href="#">Deletar</a></li>
           </ul>
         </li>

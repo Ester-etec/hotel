@@ -9,31 +9,32 @@ use App\Http\Controllers\ReservaController;
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', [ClienteController::class, 'showHome'])->name('home');
 
+//Cliente
 Route::get('/cadastro-cliente', [ClienteController::class, 'showFormularioCadastroCliente'])->name('show-formulario-cadastro');
 Route::post('/cadastro-cliente', [ClienteController::class, 'cadCliente'])->name('envia-banco-cliente');
 Route::get('/gerenciar-cliente',[ClienteController::class,'gerenciarCliente'])->name('gerenciar-cliente');
+Route::get('/mostrar-cliente',[ClienteController::class,'mostrarGerenciarClienteId'])->name('mostrar-cliente');
+Route::put('/alterar-cliente/{id}',[ClienteController::class,'alterarClienteBanco'])->name('alterar-cliente');
+Route::delete('/apaga-cliente/{id}',[ClienteController::class,'destroy'])->name('apaga-cliente');
 
+
+
+//funcionario
 Route::get('/cadastro-funcionario', [FuncionarioController::class, 'showFormularioCadastroFuncionario'])->name('show-formulario-cadastro-funcionario');
 Route::post('/cadastro-funcionario', [FuncionarioController::class, 'cadFuncionario'])->name('envia-banco-funcionario');
 Route::get('/gerenciar-funcionario',[FuncionarioController::class,'gerenciarFuncionario'])->name('gerenciar-funcionario');
 
+
+//quarto
 Route::get('/cadastro-quarto', [QuartoController::class, 'showFormularioCadastroQuarto'])->name('show-formulario-cadastro-quarto');
 Route::post('/cadastro-quarto', [QuartoController::class, 'cadQuarto'])->name('envia-banco-quarto');
 Route::get('/gerenciar-quarto',[QuartoController::class,'gerenciarQuarto'])->name('gerenciar-quarto');
 
+
+//reserva
 Route::get('/cadastro-reserva', [ReservaController::class, 'showformularioCadastroReserva'] );
 Route::post('/cadastro-reserva',[ReservaController::class,'cadReserva'])->name('envio-banco-reserva');
 Route::get('/gerenciar-reserva',[ReservaController::class,'gerenciarReserva'])->name('gerenciar-reserva');

@@ -13,7 +13,7 @@
     <label for="inputEmail" class="form-label">E-mail:</label>
     <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Paulo@gmail.com">
   </div>
-  <div class="col-2">
+  <div class="col-3">
     <label for="inputFone" class="form-label">Fone:</label>
     <input type="tel" class="form-control" id="inputFone" name="fone" placeholder="11 5698-8988">
   </div>
