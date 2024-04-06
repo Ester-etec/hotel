@@ -31,7 +31,7 @@ class ClienteController extends Controller
     }
 
     public function mostrarGerenciarClienteId(Cliente $id){
-       return view('XXXXXXX',['registrosClientes' => $id]);
+       return view('formularioAlterarCliente',['registrosClientes' => $id]);
     }
 
 
@@ -49,12 +49,12 @@ class ClienteController extends Controller
 
     public function destroy(Cliente $id){
 
-        $id->delet();
+        $id->delete();
         return Redirect::route('home');
     }
 
 
-    public function alteraClienteBanco(Cliente $id, Request $request){
+    public function alterarClienteBanco(Cliente $id, Request $request){
 
         $dadosValidos = $request->validate([
             'nome' => 'string|required',

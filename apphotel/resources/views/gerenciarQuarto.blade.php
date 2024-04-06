@@ -1,12 +1,12 @@
 @extends('layout')
 @section('content')
 <section class="container m-5">
-<h1 class="text-center">Gerenciar Dados do Cliente</h1>
+    <h1 class="text-center">Gerenciar Dados dos Quarto</h1>
   <div class="container m-5">
-    <form method="GET" action="{{route('gerenciar-cliente')}}">
+    <form method="GET" action="{{route('gerenciar-quarto')}}">
       <div class="row center">
         <div class="col">
-          <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite dados do Cliente" aria-label="First name">
+          <input type="text" id="numero" name="numero" class="form-control" placeholder="Digite o Número do Quarto" aria-label="First name">
         </div>
         <div class="col">
           <button type="submit" class="btn btn-info">Buscar</button>
@@ -18,29 +18,31 @@
     <thead>
       <tr>
         <th scope="col">Código</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Email</th>
+        <th scope="col">Número do quarto</th>
+        <th scope="col">Tipo do quarto</th>
+        <th scope="col">Valor</th>
         <th scope="col">Editar</th>
         <th scope="col">Excluir</th>
       </tr>
     </thead>
     <tbody>
-    @foreach($registrosClientes as $registrosClientesLoop)
-      <tr>
-        <th scope="row">{{$registrosClientesLoop->id}}</th>
-        <td>{{$registrosClientesLoop->nome}}</td>
-        <td>{{$registrosClientesLoop->email}}</td>
-        <td>
-          <a href="{{route('mostrar-cliente',$registrosClientesLoop)}}">
+    @foreach($registrosQuartos as $registrosQuartosLoop)
+    <tr>
+          <th scope="row">{{$registrosQuartosLoop->id}}</th>
+          <td>{{$registrosQuartosLoop->numero}}</td>
+          <td>{{$registrosQuartosLoop->tipo}}</td>
+          <td>{{$registrosQuartosLoop->valor}}</td>
+          <td>
+          <a href="">
             <button type="button" class="btn btn-primary">X</button>
           </a>
         </td>
         <td>
-        <form method="post" action="{{route('apagar-cliente', $registrosClientesLoop->id)}}">
+        <form method="post" action="{{route('apagar-quarto', $registrosQuartosLoop)}}">
             @method('delete')
             @csrf
             <button type="submit" class="btn btn-danger">X</button>
-          </form>
+         </form>
         </td>
       </tr>
       @endforeach

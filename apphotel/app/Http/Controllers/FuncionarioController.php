@@ -30,4 +30,41 @@ class FuncionarioController extends Controller
         return Redirect::route('home');
         
     }
+
+    public function mostrarGerenciarFuncionarioId(Funcionario $id){
+        return view('formularioAlterarFuncionario',['registrosFuncionarios' => $id]);
+     }
+ 
+ 
+     public function gerenciarFuncionario(Request $request){
+         $dadosFuncionario = Funcionario::query();
+         $dadosFuncionario->when($request->nome,function($query,$valor){
+             $query->where('nome','like','%'.$valor.'%');
+         });
+ 
+         $dadosFuncionario = $dadosFuncionario->get();
+ 
+         return view('gerenciarFuncionario',['registrosFuncionarios' => $dadosFuncionario]);
+     }
+ 
+ 
+     public function destroy(Funcionario $id){
+ 
+         $id->delete();
+         return Redirect::route('home');
+     }
+ 
+ 
+     public function alterarFuncionarioBanco(Funcionario $id, Request $request){
+ 
+         $dadosValidos = $request->validate([
+            'nome' => 'string|required',
+            'email' => 'string|required',
+            'funcao' => 'string|required'
+         ]);
+ 
+         $id->fill($dadosValidos);
+         $id->save();
+         return Redirect::route('home');
+     }
 }
